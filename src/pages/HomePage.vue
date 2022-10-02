@@ -1,20 +1,7 @@
-<script lang="ts" setup>
-import { onMounted } from "vue";
-
-onMounted(function () {
-  console.log("Test");
-});
-</script>
 <template>
   <div class="body">
     <div class="body__details">
-      <p class="body__text">
-        Melbourne-based Marine Consultancy Company, providing marine expertise to the
-        shipping community. Independent surveys. Authorised surveyor for Honduran and
-        Bolivian Flag vessels. Authorised PMDS surveyor for Geelong and Melbourne
-        (Panamanian Maritime documentation services). Authorised Technical/Engineering
-        surveyor for Intertek Australia.
-      </p>
+      <landing-text></landing-text>
     </div>
     <q-img
       src="./../assets/blur_edges-Increased-Blur-pexels-mudassir-ali-1556991.png"
@@ -39,10 +26,13 @@ onMounted(function () {
     justify-content: center;
     align-items: center;
   }
-  &__text {
-    width: 50vw;
-    font-size: x-large;
-    padding: 10px;
-  }
 }
 </style>
+<script lang="ts" setup>
+import { onMounted } from "vue";
+import LandingText from "src/components/LandingText.vue";
+
+onMounted(function () {
+  console.log("Test");
+});
+</script>

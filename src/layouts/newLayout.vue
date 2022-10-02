@@ -8,9 +8,11 @@
           </q-avatar>
           Mascot Marine
         </q-toolbar-title>
+        <q-space> </q-space>
       </q-toolbar>
+      <q-space></q-space>
+      <header-links></header-links>
     </q-header>
-
     <q-page-container>
       <router-view />
     </q-page-container>
@@ -25,6 +27,7 @@
 }
 .header {
   height: 10vh;
+  display: flex;
   &__image {
   }
   &__title {
@@ -33,3 +36,6 @@
   }
 }
 </style>
+<script lang="ts" setup>
+import HeaderLinks from "src/components/HeaderLinks.vue";
+</script>
