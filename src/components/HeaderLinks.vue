@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-mutating-props -->
 <template>
   <div class="body">
     <div class="body__links">
@@ -10,6 +11,21 @@
         {{ link.title }}
       </q-item>
     </div>
+    <q-drawer
+      side="right"
+      v-model="drawerRight"
+      :width="200"
+      :breakpoint="500"
+      class="body__drawer-right"
+    >
+      <q-scroll-area class="fit body__drawer-right">
+        <div class="q-pa-sm">
+          <q-item v-for="link in LinkList" to="{{link.link}}" :key="link.link">{{
+            link.title
+          }}</q-item>
+        </div>
+      </q-scroll-area>
+    </q-drawer>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -30,9 +46,16 @@
       margin-right: 10px;
     }
   }
+  &__drawer-right {
+    background-color: $secondary;
+    color: $text-color;
+  }
 }
 </style>
 <script lang="ts" setup>
+defineProps<{
+  drawerRight?: boolean;
+}>();
 const LinkList = [
   {
     title: "Home",
